@@ -11,12 +11,22 @@ jobs:
     steps:
       - checkout
       - run:        
-          name: Test committing
+          name: Installing vue-cli
+          command: |
+            npm install -g @vue/cli
+      - run:        
+          name: Authenticating github
           command: |
             git config user.email "franciscommcastro@gmail.com"
             git config user.name "chicomcastro"
+      - run:        
+          name: Build on gh branch
+          command: |
             git checkout --orphan gh-pages
             npm run build
+      - run:        
+          name: Push to gh branch
+          command: |
             git --work-tree dist add --all"
             git --work-tree dist commit -m gh-pages"
             git push origin HEAD:gh-pages --force
