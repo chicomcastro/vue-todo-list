@@ -10,20 +10,19 @@ jobs:
         #   password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: echo "this is the build job"
-  test:
-    docker:
-      - image: node:14.15.3
-        # auth:
-        #   username: mydockerhub-user
-        #   password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - run: echo "this is the test job"
+      - run:        
+          name: Test committing
+          command: |
+            git config user.email "franciscommcastro@gmail.com"
+            git config user.name "chicomcastro"
+            git checkout --orphan gh-pages
+            npm run build
+            git --work-tree dist add --all"
+            git --work-tree dist commit -m gh-pages"
+            git push origin HEAD:gh-pages --force
 
 # Orchestrate our job run sequence
 workflows:
   build_and_test:
     jobs:
       - build
-      - test
