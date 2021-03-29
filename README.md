@@ -1,4 +1,4 @@
-# vue-demo
+# vue-learning (demo)
 
 ## Project setup
 ```
