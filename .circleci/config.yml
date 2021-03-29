@@ -2,7 +2,7 @@ version: 2.1
 
 # Define the jobs we want to run for this project
 jobs:
-  build:
+  deploy:
     docker:
       - image: node:14.15.3
         # auth:
@@ -23,6 +23,9 @@ jobs:
           command: |
             git config user.email "franciscommcastro@gmail.com"
             git config user.name "chicomcastro"
+      - add_ssh_keys:
+          fingerprints:
+            - "64:4d:ea:d4:91:32:b2:93:30:3e:46:58:31:c0:d8:cc"
       - run:        
           name: Build on gh branch
           command: |
@@ -37,6 +40,6 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  build_and_test:
+  build_and_deploy:
     jobs:
-      - build
+      - deploy
