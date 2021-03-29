@@ -31,8 +31,8 @@ jobs:
       - run:        
           name: Push to gh branch
           command: |
-            git --work-tree dist add --all"
-            git --work-tree dist commit -m gh-pages"
+            git --work-tree dist add --all
+            git --work-tree dist commit -m gh-pages
             git push origin HEAD:gh-pages --force
 
 # Orchestrate our job run sequence
