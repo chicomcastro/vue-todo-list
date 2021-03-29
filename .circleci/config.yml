@@ -15,6 +15,10 @@ jobs:
           command: |
             npm install -g @vue/cli
       - run:        
+          name: Installing project dependencies
+          command: |
+            npm install
+      - run:        
           name: Authenticating github
           command: |
             git config user.email "franciscommcastro@gmail.com"
