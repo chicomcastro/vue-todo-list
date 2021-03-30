@@ -36,6 +36,8 @@ jobs:
           command: |
             git --work-tree dist add --all
             git --work-tree dist commit -m "[ci skip] gh-pages"
+            git --work-tree .circleci add --all
+            git --work-tree .circleci commit -m "[ci skip] gh-pages"
             git push origin HEAD:gh-pages --force
 
 # Orchestrate our job run sequence
