@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/vue-learning/'
-}
+  publicPath: "/vue-todo-list/",
+};
