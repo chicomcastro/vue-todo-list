@@ -1,6 +1,6 @@
 # vue-todo-list (demo)
 
-We can check it out at [http://]
+We can check this project running at <https://chicomcastro.github.io/vue-todo-list/>
 
 ## Project setup
 
