@@ -1,5 +1,7 @@
 # vue-todo-list (demo)
 
+We can check it out at [http://]
+
 ## Project setup
 
 ```
