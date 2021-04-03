@@ -25,12 +25,16 @@ jobs:
             git config user.name "chicomcastro"
       - add_ssh_keys:
           fingerprints:
-            - "64:4d:ea:d4:91:32:b2:93:30:3e:46:58:31:c0:d8:cc"
+            - "e2:59:e9:fb:e1:ed:4e:fd:5a:44:8a:4e:7e:57:20:73"
       - run:        
           name: Build on gh branch
           command: |
             git checkout --orphan gh-pages
             npm run build
+      - run:        
+          name: Linting
+          command: |
+            npm run lint
       - run:        
           name: Push to gh branch
           command: |
