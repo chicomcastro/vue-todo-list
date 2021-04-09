@@ -3,12 +3,12 @@ import { Todo } from '@/types';
 import { State } from './state';
 
 enum MutationTypes {
-    SET_LOADING = 'SET_LOADING',
-    ADD_TODO = 'ADD_TODO',
-    TOGGLE_TODO = 'TOGGLE_TODO',
-    REMOVE_TODO = 'REMOVE_TODO',
-    TOGGLE_LIST = 'TOGGLE_LIST',
-    REMOVE_LIST = 'REMOVE_LIST',
+    SET_LOADING = 'setLoading',
+    ADD_TODO = 'addTodo',
+    TOGGLE_TODO = 'toggleTodo',
+    REMOVE_TODO = 'removeTodo',
+    TOGGLE_LIST = 'toggleList',
+    REMOVE_LIST = 'removeList',
 }
 
 export type Mutations<S = State> = {
