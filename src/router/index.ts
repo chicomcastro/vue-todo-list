@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
         path: '/board',
         name: 'Kanban board',
         component: () =>
-            import(/* webpackChunkName: "about" */ '../views/Kanban.vue'),
+            import(/* webpackChunkName: "about" */ '../views/Board.vue'),
     },
     {
         path: '/about',
