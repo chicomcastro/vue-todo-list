@@ -8,6 +8,7 @@
                         v-model="todo.description"
                         class="form-input"
                         placeholder="New todo"
+                        :disabled="loading"
                     />
                     <button
                         class="btn btn-primary input-group-btn"
@@ -49,7 +50,7 @@ import { mapActions, mapState } from 'vuex';
     methods: {
         ...mapActions(['addTodo', 'toggleTodo', 'removeTodo']),
         async add(todo: TodoType) {
-            await this.addTodo(todo);
+            await this.addTodo({ ...todo });
             this.todo = { checked: false };
         },
     },
